@@ -16,32 +16,32 @@
  */
 
 const Menu = [
-  { title: 'serviceSearch', path: '/service', icon: 'search' },
+  {title: 'serviceSearch', path: '/service', icon: 'search'},
   {
     title: 'serviceGovernance',
     icon: 'edit',
     group: 'governance',
     items: [
-      { title: 'routingRule', path: '/governance/routingRule' },
-      { title: 'tagRule', path: '/governance/tagRule', badge: 'new' },
-      { title: 'accessControl', path: '/governance/access' },
-      { title: 'dynamicConfig', path: '/governance/config' },
-      { title: 'weightAdjust', path: '/governance/weight' },
-      { title: 'loadBalance', path: '/governance/loadbalance' }
+      {title: 'routingRule', path: '/governance/routingRule'},
+      {title: 'tagRule', path: '/governance/tagRule', badge: 'new'},
+      {title: 'accessControl', path: '/governance/access'},
+      {title: 'dynamicConfig', path: '/governance/config'},
+      {title: 'weightAdjust', path: '/governance/weight'},
+      {title: 'loadBalance', path: '/governance/loadbalance'}
     ]
   },
-  { title: 'serviceTest', path: '/test', icon: 'code' },
-  { title: 'serviceMock', path: '/mock', icon: 'build', badge: 'feature' },
+  {title: 'serviceTest', path: '/test', icon: 'code'},
+  {title: 'serviceMock', path: '/mock', icon: 'build', badge: 'feature'},
   {
     title: 'serviceMetrics',
     path: 'metrics',
     icon: 'show_chart',
     items: [
-      { title: 'serviceMetrics', path: '/metrics/index', badge: 'feature' },
-      { title: 'serviceRelation', path: '/metrics/relation', badge: 'new' }
+      {title: 'serviceMetrics', path: '/metrics/index', badge: 'feature'},
+      {title: 'serviceRelation', path: '/metrics/relation', badge: 'new'}
     ]
   },
-  { title: 'configManage', path: '/management', icon: 'build' }
+  {title: 'configManage', path: '/management', icon: 'build'}
 ]
 
 export default Menu

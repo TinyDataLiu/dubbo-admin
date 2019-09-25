@@ -74,7 +74,8 @@
           <v-btn outline
                  color="primary"
                  @click.stop="toCreate"
-                 class="mb-2">{{$t('create')}}</v-btn>
+                 class="mb-2">{{$t('create')}}
+          </v-btn>
         </v-toolbar>
 
         <v-card-text class="pa-0" v-show="selected == 0">
@@ -92,7 +93,8 @@
                           class="mr-2"
                           color="blue"
                           slot="activator"
-                          @click="toEdit(props.item, true)">visibility</v-icon>
+                          @click="toEdit(props.item, true)">visibility
+                  </v-icon>
                   <span>{{$t('view')}}</span>
                 </v-tooltip>
                 <v-tooltip bottom>
@@ -100,7 +102,8 @@
                           class="mr-2"
                           color="blue"
                           slot="activator"
-                          @click="toEdit(props.item, false)">edit</v-icon>
+                          @click="toEdit(props.item, false)">edit
+                  </v-icon>
                   <span>{{$t('edit')}}</span>
                 </v-tooltip>
                 <v-tooltip bottom>
@@ -108,7 +111,8 @@
                           class="mr-2"
                           slot="activator"
                           color="red"
-                          @click="toDelete(props.item)">delete</v-icon>
+                          @click="toDelete(props.item)">delete
+                  </v-icon>
                   <span>{{$t('delete')}}</span>
                 </v-tooltip>
               </td>
@@ -130,7 +134,8 @@
                           class="mr-2"
                           color="blue"
                           slot="activator"
-                          @click="toEdit(props.item, true)">visibility</v-icon>
+                          @click="toEdit(props.item, true)">visibility
+                  </v-icon>
                   <span>{{$t('view')}}</span>
                 </v-tooltip>
                 <v-tooltip bottom>
@@ -138,7 +143,8 @@
                           class="mr-2"
                           color="blue"
                           slot="activator"
-                          @click="toEdit(props.item, false)">edit</v-icon>
+                          @click="toEdit(props.item, false)">edit
+                  </v-icon>
                   <span>Edit</span>
                 </v-tooltip>
                 <v-tooltip bottom>
@@ -146,7 +152,8 @@
                           class="mr-2"
                           slot="activator"
                           color="red"
-                          @click="toDelete(props.item)">delete</v-icon>
+                          @click="toDelete(props.item)">delete
+                  </v-icon>
                   <span>Delete</span>
                 </v-tooltip>
               </td>
@@ -178,7 +185,7 @@
               v-model="modal.application"
             ></v-text-field>
             <v-layout row justify-space-between>
-              <v-flex >
+              <v-flex>
                 <v-text-field
                   :readonly="modal.readonly"
                   :label="$t('whiteList')"
@@ -202,10 +209,12 @@
           <v-spacer></v-spacer>
           <v-btn color="darken-1"
                  flat
-                 @click="closeModal()">{{$t('close')}}</v-btn>
+                 @click="closeModal()">{{$t('close')}}
+          </v-btn>
           <v-btn color="primary"
                  depressed
-                 @click="modal.click">{{ modal.saveBtn }}</v-btn>
+                 @click="modal.click">{{ modal.saveBtn }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -220,10 +229,12 @@
           <v-spacer></v-spacer>
           <v-btn color="darken-1"
                  flat
-                 @click="confirm.enable = false">{{$t('disagree')}}</v-btn>
+                 @click="confirm.enable = false">{{$t('disagree')}}
+          </v-btn>
           <v-btn color="primary"
                  depressed
-                 @click="deleteItem(confirm.id)">{{$t('agree')}}</v-btn>
+                 @click="deleteItem(confirm.id)">{{$t('agree')}}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -231,13 +242,13 @@
 </template>
 
 <script>
-import AceEditor from '@/components/public/AceEditor'
-import Search from '@/components/public/Search'
-import Breadcrumb from '@/components/public/Breadcrumb'
+  import AceEditor from '@/components/public/AceEditor'
+  import Search from '@/components/public/Search'
+  import Breadcrumb from '@/components/public/Breadcrumb'
 
-export default {
-  name: 'AccessControl',
-  data: () => ({
+  export default {
+    name: 'AccessControl',
+    data: () = > ({
     items: [
       {id: 0, title: 'serviceName', value: 'service'},
       {id: 1, title: 'app', value: 'application'}
@@ -267,35 +278,49 @@ export default {
       readonly: false,
       title: 'Create New',
       saveBtn: 'Create',
-      click: () => {},
-      id: null,
-      service: null,
-      application: null,
-      content: '',
-      blackList: '',
-      whiteList: '',
-      template:
-        'blacklist:\n' +
-        '  - 1.1.1.1\n' +
-        '  - 2.2.2.2\n' +
-        'whitelist:\n' +
-        '  - 3.3.3.3\n' +
-        '  - 4.4.*\n'
-    },
-    services: [],
-    confirm: {
-      enable: false,
-      title: '',
-      text: '',
-      id: null
-    },
-    snackbar: {
-      enable: false,
-      text: ''
-    }
+      click: () = > {},
+    id: null,
+    service: null,
+    application: null,
+    content: '',
+    blackList: '',
+    whiteList: '',
+    template:
+    'blacklist:\n' +
+    '  - 1.1.1.1\n' +
+    '  - 2.2.2.2\n' +
+    'whitelist:\n' +
+    '  - 3.3.3.3\n' +
+    '  - 4.4.*\n'
+  },
+    services
+  :
+  [],
+    confirm
+  :
+  {
+    enable: false,
+      title
+  :
+    '',
+      text
+  :
+    '',
+      id
+  :
+    null
+  }
+  ,
+  snackbar: {
+    enable: false,
+      text
+  :
+    ''
+  }
   }),
   methods: {
-    setAppHeaders () {
+    setAppHeaders()
+    {
       this.appHeaders = [
         {
           text: this.$t('appName'),
@@ -309,8 +334,10 @@ export default {
           width: '115px'
         }
       ]
-    },
-    setServiceHeaders () {
+    }
+  ,
+    setServiceHeaders()
+    {
       this.serviceHeaders = [
         {
           text: this.$t('serviceName'),
@@ -324,32 +351,43 @@ export default {
           width: '115px'
         }
       ]
-    },
-    querySelections (v) {
+    }
+  ,
+    querySelections(v)
+    {
       if (this.timerID) {
         clearTimeout(this.timerID)
       }
       // Simulated ajax query
-      this.timerID = setTimeout(() => {
-        if (v && v.length >= 4) {
-          this.searchLoading = true
-          if (this.selected === 0) {
-            this.typeAhead = this.$store.getters.getServiceItems(v)
-          } else if (this.selected === 1) {
-            this.typeAhead = this.$store.getters.getAppItems(v)
-          }
-          this.searchLoading = false
-          this.timerID = null
-        } else {
-          this.typeAhead = []
+      this.timerID = setTimeout(() = > {
+        if(v && v.length >= 4
+    )
+      {
+        this.searchLoading = true
+        if (this.selected === 0) {
+          this.typeAhead = this.$store.getters.getServiceItems(v)
+        } else if (this.selected === 1) {
+          this.typeAhead = this.$store.getters.getAppItems(v)
         }
-      }, 500)
+        this.searchLoading = false
+        this.timerID = null
+      }
+    else
+      {
+        this.typeAhead = []
+      }
     },
+      500
+    )
+    }
+  ,
     submit: function () {
       this.filter = document.querySelector('#serviceSearch').value.trim()
       this.search(true)
-    },
-    search (rewrite) {
+    }
+  ,
+    search(rewrite)
+    {
       if (!this.filter) {
         this.$notify.error('Either service or application is needed')
         return
@@ -371,20 +409,25 @@ export default {
       }
       let url = '/rules/access/?' + type + '=' + this.filter
       this.$axios.get(url)
-        .then(response => {
-          this.accesses = response.data
-          this.loading = false
-        }).catch(error => {
-          this.showSnackbar('error', error.response.data.message)
-          this.loading = false
-        })
-    },
-    closeModal () {
+        .then(response = > {
+        this.accesses = response.data
+      this.loading = false
+    }).
+      catch(error = > {
+        this.showSnackbar('error', error.response.data.message)
+      this.loading = false
+    })
+    }
+  ,
+    closeModal()
+    {
       this.modal.enable = false
       this.modal.id = null
       this.$refs.modalForm.reset()
-    },
-    toCreate () {
+    }
+  ,
+    toCreate()
+    {
       Object.assign(this.modal, {
         enable: true,
         title: 'Create New',
@@ -393,8 +436,10 @@ export default {
         content: this.modal.template,
         click: this.createItem
       })
-    },
-    createItem () {
+    }
+  ,
+    createItem()
+    {
       // let doc = yaml.load(this.modal.content)
       this.filter = ''
       if (!this.modal.service && !this.modal.application) {
@@ -419,22 +464,28 @@ export default {
         application: this.modal.application,
         whitelist: whiteList,
         blacklist: blackList
-      }).then(response => {
-        if (response.status === 201) {
-          if (vm.modal.service) {
-            vm.selected = 0
-            vm.filter = vm.modal.service
-          } else {
-            vm.selected = 1
-            vm.filter = vm.modal.application
-          }
-          this.search()
-          this.closeModal()
+      }).then(response = > {
+        if(response.status === 201
+    )
+      {
+        if (vm.modal.service) {
+          vm.selected = 0
+          vm.filter = vm.modal.service
+        } else {
+          vm.selected = 1
+          vm.filter = vm.modal.application
         }
-        this.showSnackbar('success', 'Create success')
-      }).catch(error => this.showSnackbar('error', error.response.data.message))
-    },
-    toEdit (item, readonly) {
+        this.search()
+        this.closeModal()
+      }
+      this.showSnackbar('success', 'Create success')
+    }).
+      catch(error = > this.showSnackbar('error', error.response.data.message)
+    )
+    }
+  ,
+    toEdit(item, readonly)
+    {
       let itemId = null
       if (this.selected === 0) {
         itemId = item.service
@@ -457,8 +508,10 @@ export default {
         blackList: item.blacklist
         // content: yaml.safeDump({blacklist: item.blacklist, whitelist: item.whitelist})
       })
-    },
-    editItem () {
+    }
+  ,
+    editItem()
+    {
       // let doc = yaml.load(this.modal.content)
       let blackList = this.modal.blackList.split(',')
       let whiteList = this.modal.whiteList.split(',')
@@ -469,22 +522,28 @@ export default {
         application: this.modal.application,
         service: this.modal.service
 
-      }).then(response => {
-        if (response.status === 200) {
-          if (vm.modal.service) {
-            vm.selected = 0
-            vm.filter = vm.modal.service
-          } else {
-            vm.selected = 1
-            vm.filter = vm.modal.application
-          }
-          vm.closeModal()
-          vm.search()
+      }).then(response = > {
+        if(response.status === 200
+    )
+      {
+        if (vm.modal.service) {
+          vm.selected = 0
+          vm.filter = vm.modal.service
+        } else {
+          vm.selected = 1
+          vm.filter = vm.modal.application
         }
-        this.showSnackbar('success', 'Update success')
-      }).catch(error => this.showSnackbar('error', error.response.data.message))
-    },
-    toDelete (item) {
+        vm.closeModal()
+        vm.search()
+      }
+      this.showSnackbar('success', 'Update success')
+    }).
+      catch(error = > this.showSnackbar('error', error.response.data.message)
+    )
+    }
+  ,
+    toDelete(item)
+    {
       let itemId = null
       if (this.selected === 0) {
         itemId = item.service
@@ -500,37 +559,53 @@ export default {
         text: `Id: ${itemId}`,
         id: itemId
       })
-    },
-    deleteItem (id) {
+    }
+  ,
+    deleteItem(id)
+    {
       this.$axios.delete('/rules/access/' + id)
-      .then(response => {
+        .then(response = > {
         this.showSnackbar('success', 'Delete success')
-        this.search(this.filter)
-      }).catch(error => this.showSnackbar('error', error.response.data.message))
-    },
-    showSnackbar (color, message) {
+      this.search(this.filter)
+    }).
+      catch(error = > this.showSnackbar('error', error.response.data.message)
+    )
+    }
+  ,
+    showSnackbar(color, message)
+    {
       this.$notify(message, color)
       this.confirm.enable = false
     }
-  },
+  }
+  ,
   computed: {
-    queryBy () {
+    queryBy()
+    {
       return this.$t('by') + this.$t(this.items[this.selected].title)
-    },
-    area () {
+    }
+  ,
+    area()
+    {
       return this.$i18n.locale
     }
-  },
+  }
+  ,
   watch: {
-    input (val) {
+    input(val)
+    {
       this.querySelections(val)
-    },
-    area () {
+    }
+  ,
+    area()
+    {
       this.setAppHeaders()
       this.setServiceHeaders()
     }
-  },
-  mounted () {
+  }
+  ,
+  mounted()
+  {
     this.setAppHeaders()
     this.setServiceHeaders()
     this.$store.dispatch('loadServiceItems')
@@ -547,11 +622,12 @@ export default {
     if (this.filter !== null) {
       this.search()
     }
-  },
+  }
+  ,
   components: {
     Breadcrumb,
-    AceEditor,
-    Search
+      AceEditor,
+      Search
   }
-}
+  }
 </script>
